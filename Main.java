@@ -16,7 +16,7 @@ public class Main {
         customLinkedList.append(thirdNode);
 
         customLinkedList.insertNodeAfterBySearching(30,fourthNode);
-
+        customLinkedList.deleteNodeBySearchingValue(40);
         customLinkedList.printAllNodes();
     }
 }
