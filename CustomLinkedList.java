@@ -94,4 +94,23 @@ public class CustomLinkedList {
         System.out.println(currentNodes);
     }
 
+    /**
+     * @param value node
+     * @return true/false
+     */
+    public boolean searchNode(int value) {
+
+        ParentNode iterableNode = head;
+
+        while (iterableNode.getNextNode() != null) {
+
+            if (iterableNode.getNextNode().getValue().equals(value)) {
+                System.out.println("YES, THE NODE YOU ARE LOOKING FOR HAS BEEN FOUND");
+                return true;
+            }
+            iterableNode = iterableNode.getNextNode();
+        }
+        return false;
+    }
+
 }
