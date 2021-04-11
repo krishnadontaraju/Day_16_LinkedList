@@ -68,6 +68,17 @@ public class CustomLinkedList {
 
     }
 
+    /**
+     * the popLast method deletes the last node of the list
+     */
+    public void popLast() {
+        ParentNode temporaryNode = head;
+        while (!temporaryNode.getNextNode().equals(tail)) {
+            temporaryNode = temporaryNode.getNextNode();
+        }
+        this.tail = temporaryNode;
+    }
+
 
     public void printAllNodes() {
         StringBuffer currentNodes = new StringBuffer("All Nodes are : ");
