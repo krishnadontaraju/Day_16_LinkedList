@@ -1,8 +1,6 @@
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.util.LinkedList;
-
 public class LinkedListTest {
     /**
      * Creating an Linked List and Checking if the nodes are pointing correctly
@@ -18,9 +16,31 @@ public class LinkedListTest {
         customLinkedList.add(firstNode);
         customLinkedList.add(secondNode);
         customLinkedList.add(thirdNode);
+        
         Assertions.assertTrue(customLinkedList.head.equals(thirdNode) &&
                                         customLinkedList.head.getNextNode().equals(secondNode) &&
                                         customLinkedList.tail.equals(firstNode) );
+    }
+
+    /**
+     * Created the append method in the Linked List class and verifying it here
+     */
+
+    @Test
+    void whenAppendedNewElement_ShouldBeAtLast() {
+        NodeClass<Integer> firstNode = new NodeClass<>(70);
+        NodeClass<Integer> secondNode = new NodeClass<>(30);
+        NodeClass<Integer> thirdNode = new NodeClass<>(56);
+
+        CustomLinkedList customLinkedList = new CustomLinkedList();
+
+        customLinkedList.append(firstNode);
+        customLinkedList.append(secondNode);
+        customLinkedList.append(thirdNode);
+
+        Assertions.assertTrue(customLinkedList.tail.equals(thirdNode) &&
+                                        customLinkedList.tail.getNextNode().equals(secondNode) &&
+                                        customLinkedList.head.equals(firstNode) );
     }
 
     /**

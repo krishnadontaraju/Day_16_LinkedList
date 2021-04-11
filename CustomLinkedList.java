@@ -26,4 +26,17 @@ public class CustomLinkedList {
             this.head.setNextNode(temporaryNode);
         }
     }
+
+    public void append(ParentNode parameterNode) {
+        if(this.tail == null)
+            this.tail = parameterNode;
+        if (this.head == null)
+            this.head = parameterNode;
+        else{
+            ParentNode temporaryNode = this.tail;
+            this.tail = parameterNode;
+            this.tail.setNextNode(temporaryNode);
+        }
+    }
+
 }
