@@ -2,6 +2,28 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
+
+    /**
+     * Testing the Insert method to return the list as expected
+     */
+
+    @Test
+    void whenInsertedNewElement_ShouldBeInBetweenAsExpected() {
+        NodeClass<Integer> firstNode = new NodeClass<>(56);
+        NodeClass<Integer> secondNode = new NodeClass<>(30);
+        NodeClass<Integer> thirdNode = new NodeClass<>(70);
+
+        CustomLinkedList customLinkedList = new CustomLinkedList();
+
+        customLinkedList.add(firstNode);
+        customLinkedList.append(thirdNode);
+        customLinkedList.insertNodeBetween(firstNode,secondNode);
+
+        Assertions.assertTrue(customLinkedList.head.equals(firstNode) &&
+                                        customLinkedList.head.getNextNode().equals(secondNode) &&
+                                        customLinkedList.tail.equals(thirdNode) );
+    }
+
     /**
      * Creating an Linked List and Checking if the nodes are pointing correctly
      */
@@ -16,7 +38,7 @@ public class LinkedListTest {
         customLinkedList.add(firstNode);
         customLinkedList.add(secondNode);
         customLinkedList.add(thirdNode);
-        
+
         Assertions.assertTrue(customLinkedList.head.equals(thirdNode) &&
                                         customLinkedList.head.getNextNode().equals(secondNode) &&
                                         customLinkedList.tail.equals(firstNode) );
@@ -60,8 +82,6 @@ public class LinkedListTest {
          *Asserting that the first node points to second and second points to third Node
          */
         Assertions.assertTrue(firstNode.getNextNode().equals(secondNode) && secondNode.getNextNode().equals(thirdNode));
-
-
 
 
     }
