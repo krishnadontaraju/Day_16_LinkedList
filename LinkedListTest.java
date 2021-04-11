@@ -2,6 +2,33 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
+
+    /**
+     * In this test we pass fourth node to be inserted after 30 which is currently
+     * in the second place and ,when Correct the sequence should result true
+     */
+    @Test
+    void whenGivenAValue_ShouldInsertANodeAfterThat() {
+        NodeClass<Integer> firstNode = new NodeClass<>(56);
+        NodeClass<Integer> secondNode = new NodeClass<>(30);
+        NodeClass<Integer> thirdNode = new NodeClass<>(70);
+        NodeClass<Integer> fourthNode = new NodeClass<>(40);
+
+        CustomLinkedList customLinkedList = new CustomLinkedList();
+
+        customLinkedList.append(firstNode);
+        customLinkedList.append(secondNode);
+        customLinkedList.append(thirdNode);
+
+        customLinkedList.insertNodeAfterBySearching(30, fourthNode);
+
+        Assertions.assertTrue(customLinkedList.head.equals(firstNode) &&
+                customLinkedList.head.getNextNode().equals(secondNode) &&
+                customLinkedList.head.getNextNode().getNextNode().equals(fourthNode) &&
+                customLinkedList.tail.equals(thirdNode));
+    }
+
+
     /**
      * The Search method returns true if found and false if not
      */
