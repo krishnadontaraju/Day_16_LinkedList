@@ -3,6 +3,25 @@ import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
     /**
+     * The Search method returns true if found and false if not
+     */
+    @Test
+    void whenSearchedForA_ValueIfPresent_ShouldReturnTrue() {
+        NodeClass<Integer> firstNode = new NodeClass<>(56);
+        NodeClass<Integer> secondNode = new NodeClass<>(30);
+        NodeClass<Integer> thirdNode = new NodeClass<>(70);
+
+        CustomLinkedList customLinkedList = new CustomLinkedList();
+
+        customLinkedList.add(thirdNode);
+        customLinkedList.add(secondNode);
+        customLinkedList.add(firstNode);
+
+        boolean isSearchFound = customLinkedList.searchNode(30);
+        Assertions.assertTrue(isSearchFound);
+    }
+
+    /**
      * The test to validate the pop Last method
      */
     @Test
