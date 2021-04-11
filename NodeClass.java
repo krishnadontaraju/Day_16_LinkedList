@@ -1,17 +1,18 @@
-public class NodeClass<K> {
+public class NodeClass<K> implements ParentNode<K> {
     public K value;
-    public NodeClass nextNode;
+    public ParentNode nextNode;
 
 
     NodeClass(K value){
         this.value = value;
     }
 
-    public NodeClass<K> getNextNode() {
+    public ParentNode getNextNode() {
         return nextNode;
     }
 
-    public void setNextNode(NodeClass<K> nextNode) {
+
+    public void setNextNode(ParentNode nextNode) {
         this.nextNode = nextNode;
     }
 
@@ -23,3 +24,4 @@ public class NodeClass<K> {
         this.value = value;
     }
 }
+
