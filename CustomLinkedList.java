@@ -68,6 +68,17 @@ public class CustomLinkedList {
 
     }
 
+    /**
+     * the popLast method deletes the last node of the list
+     */
+    public void popLast() {
+        ParentNode temporaryNode = head;
+        while (!temporaryNode.getNextNode().equals(tail)) {
+            temporaryNode = temporaryNode.getNextNode();
+        }
+        this.tail = temporaryNode;
+    }
+
 
     public void printAllNodes() {
         StringBuffer currentNodes = new StringBuffer("All Nodes are : ");
@@ -81,6 +92,25 @@ public class CustomLinkedList {
         }
         currentNodes.append(temporaryNode.getValue());
         System.out.println(currentNodes);
+    }
+
+    /**
+     * @param value node
+     * @return true/false
+     */
+    public boolean searchNode(int value) {
+
+        ParentNode iterableNode = head;
+
+        while (iterableNode.getNextNode() != null) {
+
+            if (iterableNode.getNextNode().getValue().equals(value)) {
+                System.out.println("YES, THE NODE YOU ARE LOOKING FOR HAS BEEN FOUND");
+                return true;
+            }
+            iterableNode = iterableNode.getNextNode();
+        }
+        return false;
     }
 
 }

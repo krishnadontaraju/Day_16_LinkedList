@@ -2,12 +2,52 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class LinkedListTest {
+    /**
+     * The Search method returns true if found and false if not
+     */
+    @Test
+    void whenSearchedForA_ValueIfPresent_ShouldReturnTrue() {
+        NodeClass<Integer> firstNode = new NodeClass<>(56);
+        NodeClass<Integer> secondNode = new NodeClass<>(30);
+        NodeClass<Integer> thirdNode = new NodeClass<>(70);
+
+        CustomLinkedList customLinkedList = new CustomLinkedList();
+
+        customLinkedList.add(thirdNode);
+        customLinkedList.add(secondNode);
+        customLinkedList.add(firstNode);
+
+        boolean isSearchFound = customLinkedList.searchNode(30);
+        Assertions.assertTrue(isSearchFound);
+    }
+
+    /**
+     * The test to validate the pop Last method
+     */
+    @Test
+    void whenPoppedLast_ShouldRemove_TheLastElement() {
+        NodeClass<Integer> firstNode = new NodeClass<>(56);
+        NodeClass<Integer> secondNode = new NodeClass<>(30);
+        NodeClass<Integer> thirdNode = new NodeClass<>(70);
+
+        CustomLinkedList customLinkedList = new CustomLinkedList();
+
+        customLinkedList.add(thirdNode);
+        customLinkedList.add(secondNode);
+        customLinkedList.add(firstNode);
+
+        customLinkedList.popLast();
+
+        Assertions.assertTrue(customLinkedList.head.equals(firstNode) &&
+                customLinkedList.tail.equals(secondNode));
+    }
+
 
     /**
      * Testing the pop method which should remove the first element
      */
     @Test
-    void whenPopped_ShouldRemove_TheLastElement() {
+    void whenPopped_ShouldRemove_TheFirstElement() {
         NodeClass<Integer> firstNode = new NodeClass<>(56);
         NodeClass<Integer> secondNode = new NodeClass<>(30);
         NodeClass<Integer> thirdNode = new NodeClass<>(70);
