@@ -15,8 +15,17 @@ public class Main {
         customLinkedList.append(secondNode);
         customLinkedList.append(thirdNode);
 
-        customLinkedList.insertNodeAfterBySearching(30,fourthNode);
+        customLinkedList.insertNodeAfterBySearching(30, fourthNode);
         customLinkedList.deleteNodeBySearchingValue(40);
         customLinkedList.printAllNodes();
+
+        OrderedLinkedList linkedList = new OrderedLinkedList();
+
+        linkedList.insertNodeInSortedLinkedList(56);
+        linkedList.insertNodeInSortedLinkedList(30);
+        linkedList.insertNodeInSortedLinkedList(40);
+        linkedList.insertNodeInSortedLinkedList(70);
+
+        linkedList.displayOrderedLinkedList();
     }
 }
