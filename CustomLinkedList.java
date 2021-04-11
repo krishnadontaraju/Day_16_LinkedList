@@ -135,5 +135,27 @@ public class CustomLinkedList {
 
     }
 
+    /**
+     * Consider a -> b -> c -> d and delete c
+     * so, first c = temporaryNode
+     * then b.setNext = d
+     *
+     * @param valueOfNodeToBeDeleted, which is the value of node the User wants to remove
+     */
+    public void deleteNodeBySearchingValue(int valueOfNodeToBeDeleted) {
+        ParentNode iterableNode = head;
+
+        while (iterableNode.getNextNode() != null) {
+
+            if (iterableNode.getNextNode().getValue().equals(valueOfNodeToBeDeleted)) {
+                System.out.println(iterableNode.getValue());
+                ParentNode temporaryNode = iterableNode.getNextNode();
+                iterableNode.setNextNode(iterableNode.getNextNode().getNextNode());
+            }
+            iterableNode = iterableNode.getNextNode();
+        }
+
+    }
+
 
 }
