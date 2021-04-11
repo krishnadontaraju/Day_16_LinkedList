@@ -48,12 +48,12 @@ public class CustomLinkedList {
      * The insert method allows to place the new node in Between initial node and after node
      *
      * @param initialNode
-     * @param afterNode
+     * @param currentNode
      */
-    public void insertNodeBetween(ParentNode initialNode, ParentNode afterNode) {
+    public void insertNodeBetween(ParentNode initialNode, ParentNode currentNode) {
         ParentNode temporaryNode = initialNode.getNextNode();
-        initialNode.setNextNode(afterNode);
-        afterNode.setNextNode(temporaryNode);
+        initialNode.setNextNode(currentNode);
+        currentNode.setNextNode(temporaryNode);
     }
 
     /**
@@ -112,5 +112,28 @@ public class CustomLinkedList {
         }
         return false;
     }
+
+    /**
+     * The method takes two
+     *
+     * @param nodeToBeInsertedAfter, which is the value after the node should be placed
+     * @param nodeToBeInserted,      which is the node to placed
+     */
+    public void insertNodeAfterBySearching(int nodeToBeInsertedAfter, ParentNode nodeToBeInserted) {
+        ParentNode iterableNode = head;
+
+        while (iterableNode.getNextNode() != null) {
+
+            if (iterableNode.getValue().equals(nodeToBeInsertedAfter)) {
+                System.out.println("YES, THE NODE YOU ARE LOOKING FOR HAS BEEN FOUND");
+                ParentNode temporaryNode = iterableNode.getNextNode();
+                iterableNode.setNextNode(nodeToBeInserted);
+                nodeToBeInserted.setNextNode(temporaryNode);
+            }
+            iterableNode = iterableNode.getNextNode();
+        }
+
+    }
+
 
 }
