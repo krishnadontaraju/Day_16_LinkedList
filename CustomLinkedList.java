@@ -1,5 +1,3 @@
-
-
 /**
  * The class Custom Linked List uses generic Nodes Class and
  * adds functionalities that make these behave like a Linked List
@@ -56,6 +54,18 @@ public class CustomLinkedList {
         ParentNode temporaryNode = initialNode.getNextNode();
         initialNode.setNextNode(afterNode);
         afterNode.setNextNode(temporaryNode);
+    }
+
+    /**
+     * The pop method removes the first element from the list
+     *
+     * @return
+     */
+    public void pop() {
+
+        ParentNode temporaryNode = this.head;
+        this.head = head.getNextNode();
+
     }
 
 
